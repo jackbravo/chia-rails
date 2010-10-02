@@ -1,5 +1,7 @@
 Chia::Application.routes.draw do
-  resources :entities
+  resources :entities do
+    resources :emails
+  end
 
   get "home/index"
 
