@@ -1,0 +1,33 @@
+Entity:
+  columns:
+    name:       string
+    notes:      string
+    type:       integer
+    user_id:    integer   # each entity may have a user to log into the system
+    owner_id:   integer   # who owns this entity (primary point of contact)
+    parent_id:  integer   # company who this entity works for
+
+Person:
+  extends: Entity         # single table inheritance
+  columns:
+    title:      string
+
+Company:
+  extends: Entity         # single table inheritance
+
+Email:
+  columns:
+    entity_id:      integer
+    email:          string
+    type:           string
+
+Location:
+  columns:
+    entity_id:      integer
+    type:           integer
+    street:         string
+    city:           string
+    state:          string
+    country:        string
+    postal_code:    string
+
